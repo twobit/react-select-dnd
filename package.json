@@ -8,6 +8,7 @@
     "server": "browser-sync --port 4000 start --server --files \"**/*.html\" \"build/**/*.css\" \"build/**/*.js\" "
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.0.2",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",

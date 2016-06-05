@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {DragDropContext} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-// import SelectDND from './Draggable';
+import {SelectDND} from './Draggable';
 
 const OPTIONS = [
 	{key: 10, title: 'Ten'},
@@ -26,7 +28,7 @@ class Example extends React.Component {
 	render() {
 		return (
       <div style={{width: 300}}>
-        <Select valueKey="key"
+        <SelectDND valueKey="key"
                 labelKey="title"
                 onChange={this.onChange}
                 value={this.state.value}
@@ -37,7 +39,18 @@ class Example extends React.Component {
 	}
 }
 
+const DraggableExample = DragDropContext(HTML5Backend)(class extends React.Component {
+	render() {
+		return (
+			<div>
+				<Example />
+				<Example />
+			</div>
+		);
+	}
+});
+
 ReactDOM.render(
-	<Example />,
-	document.getElementById('app')
+	<DraggableExample />,
+	document.getElementById('root')
 );

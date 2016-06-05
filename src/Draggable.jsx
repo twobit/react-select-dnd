@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from './Select';
+import Select from 'react-select';
 import {DragDropContext, DragSource, DropTarget} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import classNames from 'classnames';
